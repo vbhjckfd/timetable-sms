@@ -1,1 +1,1 @@
-docker run --rm -v $(pwd):/usr/src/app -w /usr/src/app ruby:2.7-alpine /bin/sh -c "apk add --no-cache git && bundle lock"
+docker run --rm -v $(pwd):/usr/src/app -w /usr/src/app ruby:2.7.1-alpine /bin/sh -c "apk add --no-cache git && bundle lock"

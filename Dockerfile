@@ -1,4 +1,4 @@
-FROM ruby:2.7-buster
+FROM ruby:2.7.1-buster
 
 # Change to the application's directory
 ENV APP_HOME /application

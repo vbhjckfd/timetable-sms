@@ -27,7 +27,7 @@ post '/partners/startmobile' do
     return send_sms_response "На цій зупинці на час карантину транспорту немає"
   end
 
-  api_url = ENV['API_URL'] || 'https://api2.lad.lviv.ua'
+  api_url = ENV['API_URL'] || 'https://api.lad.lviv.ua'
 
   response = Faraday.get "#{api_url}/stops/#{stop_code}"
 
@@ -55,6 +55,7 @@ post '/partners/startmobile' do
   result = []
   timetable.each do |key, row|
     joined_times = row.join(', ').gsub(/хв/, 'm').gsub(/г/, 'h')
+    key = key.gsub(/А/, 'A').gsub(/Т/, 'T') # Replace cyrylic with latin
     result << "#{key}: #{joined_times}"
   end
 
@@ -66,5 +67,5 @@ post '/partners/startmobile' do
     x[0..3] <=> y[0..3]
   end
 
-  return send_sms_response (result.count > 0) ? result.join("\n") : "Відсутні дані про прибуття транспорту на цю зупинку у найближчі 15 хв"
+  return send_sms_response (result.count > 0) ? result.join("\n") : "Найбличжих 15хв нічого не приїде :("
 end

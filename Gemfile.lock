@@ -7,7 +7,7 @@ GEM
     multipart-post (2.1.1)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
-    nokogiri (1.10.9)
+    nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     rack (2.2.3)
     rack-protection (2.0.8.1)
@@ -29,7 +29,7 @@ DEPENDENCIES
   sinatra
 
 RUBY VERSION
-   ruby 2.7.0p0
+   ruby 2.7.1p83
 
 BUNDLED WITH
-   2.1.2
+   2.1.4
